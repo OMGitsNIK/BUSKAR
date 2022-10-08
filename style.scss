@@ -2,6 +2,9 @@
 
 *{
     margin: 0;
+    ::-webkit-scrollbar{
+        display: none;
+    }
 }
 
 :root{
@@ -9,6 +12,7 @@
     --radius:1rem
 }
 body{
+    
     font-family: 'poppins';
 }
 
@@ -65,14 +69,128 @@ nav{
 #mn{
     padding-top: 4rem;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    img{
-        border-radius: var(--radius);
-      width: 90vw;
-    }
+align-self: center;
+
+
+  img{
+    height: 90vh;
+    width: 40vw;
+    object-fit: cover;
+ 
+  }
     h1{
+        
         font-family: 'Berkshire Swash', cursive;
     }
-    
+
+  
+}
+
+.card{
+border: .12rem solid black;
+    background: rgb(255, 255, 255);
+    border-radius: var(--radius);
+    width: 20rem;
+    height: 25rem;
+}
+
+.accCard{
+align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    input{
+        width: 80%;
+        border: .12rem solid black;
+        border-radius: var(--radius);
+        padding: .6rem;
+    }
+    button{
+        width: 80%;
+        border: .12rem solid black;
+        border-radius: var(--radius);
+        padding: .6rem;
+        transition: 500ms;
+        &:hover{
+            background:var(--accent);
+        }
+    }
+}
+
+#cardHolder{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#bg{
+    overflow: hidden;
+    position: absolute;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+#accountTypes{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    a{
+        background: azure;
+       width: 25%;
+       text-align: center;
+        text-decoration: none;
+        color: black;
+        border: 0.12rem solid black;
+        border-radius: var(--radius);
+        padding: 0.6rem;
+        transition: 500ms;
+        &:hover{
+            background: var(--accent);
+        }
+      }
+      
+
+}
+
+.bus{
+width: 80vw;
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+    h3{
+        font-weight: 400;
+    }
+    span{
+transition: 100ms;
+        &:hover{
+            color:var(--accent);
+        }
+    }
+    background: azure;
+ 
+
+   
+        color: black;
+        border: 0.12rem solid black;
+        border-radius: var(--radius);
+        padding: 0.6rem;
+        transition: 500ms;
+}
+#Busses{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }

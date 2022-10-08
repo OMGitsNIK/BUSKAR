@@ -2,6 +2,9 @@
 * {
   margin: 0;
 }
+* ::-webkit-scrollbar {
+  display: none;
+}
 
 :root {
   --accent:rgb(32, 245, 196);
@@ -58,13 +61,117 @@ nav a:hover {
 #mn {
   padding-top: 4rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-self: center;
 }
 #mn img {
-  border-radius: var(--radius);
-  width: 90vw;
+  height: 90vh;
+  width: 40vw;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #mn h1 {
   font-family: "Berkshire Swash", cursive;
+}
+
+.card {
+  border: 0.12rem solid black;
+  background: rgb(255, 255, 255);
+  border-radius: var(--radius);
+  width: 20rem;
+  height: 25rem;
+}
+
+.accCard {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.accCard input {
+  width: 80%;
+  border: 0.12rem solid black;
+  border-radius: var(--radius);
+  padding: 0.6rem;
+}
+.accCard button {
+  width: 80%;
+  border: 0.12rem solid black;
+  border-radius: var(--radius);
+  padding: 0.6rem;
+  transition: 500ms;
+}
+.accCard button:hover {
+  background: var(--accent);
+}
+
+#cardHolder {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#bg {
+  overflow: hidden;
+  position: absolute;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#accountTypes {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+#accountTypes a {
+  background: azure;
+  width: 25%;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  border: 0.12rem solid black;
+  border-radius: var(--radius);
+  padding: 0.6rem;
+  transition: 500ms;
+}
+#accountTypes a:hover {
+  background: var(--accent);
+}
+
+.bus {
+  width: 80vw;
+  background: azure;
+  color: black;
+  border: 0.12rem solid black;
+  border-radius: var(--radius);
+  padding: 0.6rem;
+  transition: 500ms;
+}
+.bus .material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+.bus h3 {
+  font-weight: 400;
+}
+.bus span {
+  transition: 100ms;
+}
+.bus span:hover {
+  color: var(--accent);
+}
+
+#Busses {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
