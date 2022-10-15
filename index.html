@@ -14,12 +14,74 @@
 
     <link rel="stylesheet" type="text/css" href="./test1.css" />
     <!--     <script type="module" src="./test1.js"></script> -->
-<!--     <script type="module" src="./MapAPI(GLORY).js"></script> -->
+    <!--     <script type="module" src="./MapAPI(GLORY).js"></script> -->
     <link rel="stylesheet" type="text/css" href="st.css" />
 
 </head>
 
 <body>
+
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+    <link rel="stylesheet" media="screen" href="./particles.js-master/demo/css/style.css">
+
+    <!-- scripts -->
+    <script src="./particles.js-master/particles.js"></script>
+    <script src="./particles.js-master/demo/js/app.js"></script>
+
+    <!-- stats.js -->
+    <script src="js/lib/stats.js"></script>
+    <script>
+        var count_particles, stats, update;
+        stats = new Stats;
+        stats.setMode(0);
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.left = '0px';
+        stats.domElement.style.top = '0px';
+        document.body.appendChild(stats.domElement);
+        count_particles = document.querySelector('.js-count-particles');
+        update = function () {
+            stats.begin();
+            stats.end();
+            if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+                count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+            }
+            requestAnimationFrame(update);
+        };
+        requestAnimationFrame(update);
+    </script>
+    <div id="cursor"></div>
+    <script>
+        const cursor = document.getElementById("cursor")
+        document.addEventListener('mousemove', (event) => {
+            x = event.clientX
+            y = event.clientY
+            acc = event.c
+            cursor.style.transform = `translateX(${x - 20}px) translateY(${y + (window.scrollY) - 20}px)`
+            parallax(window.scrollY);
+        });
+        window.addEventListener("scroll", function () {
+            parallax(window.scrollY);
+        });
+        function parallax(distance) {
+            item.style.transform = `translateY(${(distance * -.05) - 100}px)`
+            cursor.style.transform = `translateX(${x - 4}px) translateY(${y + (window.scrollY) - 4}px)`
+        }
+
+    </script>
+    <style>
+        #cursor {
+            pointer-events: none;
+
+            backdrop-filter: invert(1);
+            z-index: 2;
+            transition: 100ms ease;
+            position: absolute;
+            height: 40px;
+            width: 40px;
+            border-radius: 500px;
+        }
+    </style>
     <nav>
         <div id="logo">Buskar</div>
         <div class="links">
@@ -42,22 +104,26 @@
           </h1>
          <br> -->
 
-        <div class="text">
-            <h1>Buskar</h1>
-            <p>
-                Our app is here to help travelers navigate through public transport with the confidence of a local and
-                save time
-            </p>
-            <p class="font--grey margin--b20">
-                Buskar is India’s #1 bus transport technology company. Live track
+        <div class="text" style="font-size:4vh;text-align: center;">
+
+            <p class="font--grey margin--b20" style="font-size:4vh;text-align: center;">
+
+                <br><br> <br><br>Our app is here to help travelers navigate through public transport with the confidence
+                of a local and
+                save time <span style="color: white; font-weight:800">Buskar</span> is India's <b>#1</b> bus transport
+                technology
+                company. Live track
                 your bus on the Buskar App and get digital bus tickets.
                 Your one stop solution for a convenient and hassle-free travel
                 experience.
             </p>
-            <!--           <iframe src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.8195102187005!2d74.79059320657065!3d13.352527163980202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbca4a7d2c4edb7%3A0x8d588d4fb81d861f!2sManipal%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1665320222519!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>">
-             
-          </iframe> -->
-            <div id="map" class="map"></div>
+            <DIv id="MAPHOLDER">
+                <div id="mh2">
+                    <div id="map" class="map"></div>
+                </div>
+
+            </DIv>
+
             <div class="btn"><button>Update Location</button></div>
             <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
             <script>
@@ -128,11 +194,10 @@
                 }
 
                 button.addEventListener("click", () => {
+
                     window.location.reload();
                 })
-                window.addEventListener('mousemove', () => {
-                    window.location.reload();
-                })
+
 
 
             </script>
@@ -146,13 +211,7 @@
         </div>
 
     </section>
-    <section id="try">
 
-        <!-- <img src="./Media/Main.png" alt="Mobile Image" class="center"> -->
-        <h1>Try Or Download our App</h1>
-    </section>
 </body>
 
 </html>
-
-

@@ -1,20 +1,61 @@
 body {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     height: 100vh;
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
+h1 {
+    color: white;
+}
 
-    50% {
-        background-position: 100% 50%;
-    }
+p {
+    z-index: 1;
+    color: rgb(255, 255, 255);
+}
 
-    100% {
-        background-position: 0% 50%;
-    }
+#particles-js {
+    position: fixed;
+}
+
+#map {
+    height: 30rem;
+    width: 50rem;
+    border-radius: 1rem;
+
+    overflow: hidden;
+}
+
+#MAPHOLDER {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mh2 {
+    border: 2px solid rgba(255, 255, 255, 0);
+
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: padding 200ms ease-in-out, border 200ms ease-in-out;
+}
+
+#mh2:hover {
+    border: 2px solid white;
+
+    padding: 1rem;
+    transition: padding 200ms ease-in-out, border 200ms ease-in-out;
+}
+
+#logo {
+    margin-left: 2%;
+    transition: color 300ms;
+}
+
+#logo:hover {
+    color: aqua;
 }
