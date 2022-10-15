@@ -1,33 +1,60 @@
 @import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 * {
   margin: 0;
 }
+
 * ::-webkit-scrollbar {
   display: none;
 }
 
 :root {
-  --accent:rgb(32, 245, 196);
-  --radius:1rem ;
+  --accent: rgb(121, 32, 245);
+  --radius: 1rem;
 }
 
 body {
   font-family: "poppins";
+  background: black;
+  background-size: 400% 400%;
+  height: 100vh;
 }
 
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 nav {
+  z-index: 3;
+  backdrop-filter: blur(2px);
   position: fixed;
   width: 100vw;
   height: 3rem;
-  background: rgb(15, 15, 15);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
+
+
+
+::selection {
+  background: var(--accent);
+}
+
 nav .links {
   display: flex;
   align-items: center;
@@ -35,12 +62,16 @@ nav .links {
   gap: 1rem;
   margin-right: 1rem;
 }
+
 nav a {
   text-align: center;
   text-decoration: none;
   color: aliceblue;
+
+
   transition: 500ms;
 }
+
 nav a:hover {
   color: var(--accent);
 }
@@ -54,8 +85,29 @@ nav a:hover {
   font-size: 2rem;
   color: rgb(255, 255, 255);
 }
+
 #logo img {
   height: 2rem;
+}
+
+.btn button {
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+  border-radius: 10rem;
+  border-style: none;
+  position: relative;
+  top: -20vh;
+  z-index: 1;
+  width: 15rem;
+  height: 3rem;
+  transition: background-color 300ms;
+}
+
+.btn button:hover {
+
+  background: rgb(33, 88, 255);
+  color: wheat;
 }
 
 #mn {
@@ -63,12 +115,14 @@ nav a:hover {
   display: flex;
   align-self: center;
 }
+
 #mn img {
   height: 90vh;
   width: 40vw;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
+
 #mn h1 {
   font-family: "Berkshire Swash", cursive;
 }
@@ -87,12 +141,14 @@ nav a:hover {
   flex-direction: column;
   justify-content: space-around;
 }
+
 .accCard input {
   width: 80%;
   border: 0.12rem solid black;
   border-radius: var(--radius);
   padding: 0.6rem;
 }
+
 .accCard button {
   width: 80%;
   border: 0.12rem solid black;
@@ -100,6 +156,7 @@ nav a:hover {
   padding: 0.6rem;
   transition: 500ms;
 }
+
 .accCard button:hover {
   background: var(--accent);
 }
@@ -119,7 +176,7 @@ nav a:hover {
   width: 100vw;
   height: 100vh;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 #accountTypes {
@@ -131,6 +188,7 @@ nav a:hover {
   justify-content: center;
   gap: 1rem;
 }
+
 #accountTypes a {
   background: azure;
   width: 25%;
@@ -142,6 +200,7 @@ nav a:hover {
   padding: 0.6rem;
   transition: 500ms;
 }
+
 #accountTypes a:hover {
   background: var(--accent);
 }
@@ -155,15 +214,19 @@ nav a:hover {
   padding: 0.6rem;
   transition: 500ms;
 }
+
 .bus .material-symbols-outlined {
   font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
 }
+
 .bus h3 {
   font-weight: 400;
 }
+
 .bus span {
   transition: 100ms;
 }
+
 .bus span:hover {
   color: var(--accent);
 }
@@ -174,4 +237,16 @@ nav a:hover {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+
+P {
+  width: 90%;
+
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
